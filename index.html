@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="FPS Lab — ориентировочный калькулятор FPS, советы по производительности и игровые тесты для ПК.">
+<meta name="theme-color" content="#0a0e14">
+<title>FPS Lab — калькулятор FPS и производительность ПК</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a class="logo" href="index.html"><span class="logo-icon">F</span><span>FPS<span class="green">LAB</span></span></a>
+  <nav><a href="#calculator">Калькулятор</a><a href="#guides">Гайды</a><a href="#about">О проекте</a></nav>
+</header>
+<main>
+<section class="hero">
+  <div class="kicker"><span class="dot"></span> ИНСТРУМЕНТЫ ДЛЯ ПК-ГЕЙМЕРОВ</div>
+  <h1>Узнай, на что<br>способен твой <span>ПК.</span></h1>
+  <p>Оцени примерный FPS, разбирайся в настройках и учись получать больше от своего компьютера.</p>
+  <a class="button" href="#calculator">Рассчитать FPS <span>↘</span></a>
+  <div class="hero-pills"><span>✓ Бесплатно</span><span>✓ Без регистрации</span><span>✓ Работает в браузере</span></div>
+</section>
+
+<section class="panel" id="calculator">
+  <div class="section-top"><div><div class="kicker">FPS CALCULATOR</div><h2>Собери конфигурацию</h2></div><span class="pill">БЕТА</span></div>
+  <div class="fields">
+    <label>Видеокарта<select id="gpu">
+      <option value="rtx3060">GeForce RTX 3060</option><option value="rtx4050">GeForce RTX 4050 Laptop</option>
+      <option value="rtx4060">GeForce RTX 4060</option><option value="gtx1660s">GeForce GTX 1660 Super</option>
+      <option value="gtx1050">GeForce GTX 1050</option><option value="rx6600">Radeon RX 6600</option>
+    </select></label>
+    <label>Процессор<select id="cpu">
+      <option value="mid">Средний Core i5 / Ryzen 5</option><option value="old">Старый 4-ядерный Core i3</option>
+      <option value="strong">Мощный Core i7 / Ryzen 7</option><option value="laptop">Энергоэффективный ноутбучный</option>
+    </select></label>
+    <label>Игра<select id="game">
+      <option value="cs2">Counter-Strike 2</option><option value="gta5">GTA V</option>
+      <option value="minecraft">Minecraft (без шейдеров)</option><option value="fortnite">Fortnite</option><option value="roblox">Roblox</option>
+    </select></label>
+    <label>Разрешение<select id="resolution">
+      <option value="1080">1920 × 1080 · Full HD</option><option value="1440">2560 × 1440 · 2K</option><option value="2160">3840 × 2160 · 4K</option>
+    </select></label>
+    <label>Качество графики<select id="quality">
+      <option value="low">Низкое</option><option value="medium" selected>Среднее</option><option value="high">Высокое</option>
+    </select></label>
+    <label>Оперативная память<select id="ram">
+      <option value="8">8 GB</option><option value="16" selected>16 GB</option><option value="32">32 GB</option>
+    </select></label>
+  </div>
+  <button class="button full" id="calculate">Рассчитать примерный FPS <span>→</span></button>
+  <div class="result hidden" id="result" aria-live="polite">
+    <div class="kicker">ДЕМОНСТРАЦИОННАЯ ОЦЕНКА</div><div class="fps" id="fps">— <small>FPS</small></div>
+    <div class="bar"><span id="bar"></span></div><div class="result-row"><span id="range">—</span><b id="tier">—</b></div>
+    <p class="small" id="resultNote"></p>
+  </div>
+  <p class="notice"><b>Важно:</b> результат — приблизительная демонстрационная оценка, не обещание реальной производительности. Значения основаны на упрощённых коэффициентах, а не на полном наборе проверенных бенчмарков. Для достоверных результатов нужны тесты конкретных комплектующих и версий игр.</p>
+</section>
+
+<section class="guides" id="guides">
+  <div class="section-top"><div><div class="kicker">БАЗА ЗНАНИЙ</div><h2>Полезно знать</h2></div></div>
+  <div class="guide-grid">
+    <article class="guide"><div class="guide-number">01 / FPS</div><h3>Что такое FPS?</h3><p>FPS — количество кадров, которые компьютер отображает за секунду. Более высокий показатель часто делает движение плавнее, но важны и стабильность кадров, и задержка.</p></article>
+    <article class="guide"><div class="guide-number">02 / SETTINGS</div><h3>Как повысить FPS?</h3><p>Обновляй драйверы из официальных источников, закрывай ненужные приложения и проверяй настройки графики. Меняй параметры по одному и сравнивай результаты в одинаковых условиях.</p></article>
+    <article class="guide"><div class="guide-number">03 / HARDWARE</div><h3>Почему важны CPU и GPU?</h3><p>Видеокарта обрабатывает графику, а процессор выполняет игровые и системные задачи. В разных играх ограничением может быть разный компонент, поэтому одной модели видеокарты недостаточно для точного прогноза.</p></article>
+  </div>
+</section>
+
+<section class="about panel" id="about"><div class="kicker">О ПРОЕКТЕ</div><h2>FPS Lab — проект для геймеров</h2><p>Мы хотим сделать понятный ресурс о производительности ПК, настройках игр и компьютерных комплектующих. Материалы будут улучшаться по мере добавления проверенных тестов.</p><p class="small">FPS Lab — независимый проект. Он не связан с NVIDIA, AMD, Valve, Rockstar Games, Epic Games или Roblox Corporation. Названия игр и оборудования принадлежат их правообладателям.</p><p><a href="privacy.html">Политика конфиденциальности</a> · <a href="contact.html">Контакты</a></p></section>
+</main>
+<footer><span>© 2026 FPS Lab</span><span>Сделано как независимый учебный проект</span></footer>
+<script src="script.js"></script>
+</body></html>
